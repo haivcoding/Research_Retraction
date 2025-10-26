@@ -26,6 +26,10 @@ The first objective aimed to identify major historical patterns and underlying c
 
 * **Sharp Increase Over Time:**
   The number of retractions has risen dramatically, reaching a peak of **6,034 in 2023**, compared to only one in 1940. This reflects both the rapid growth of scientific publications and increased scrutiny of research integrity.
+  
+<img src="https://github.com/user-attachments/assets/7b3d96de-2e6b-4db4-a663-15274809375e" 
+     alt="image" 
+     style="width:60%; height:auto;" />
 
 * **Dominant Subject Areas:**
   **Biological and Health Sciences** recorded the highest retraction rates, followed by **Business, Technology, and Physical Sciences**. These fields face higher ethical and methodological pressures due to their societal and clinical relevance.
@@ -33,6 +37,8 @@ The first objective aimed to identify major historical patterns and underlying c
 * **Journal, Publisher, and Regional Concentration:**
   Retracted papers are concentrated within a small number of publishers—**the top 10 accounted for 74.42%** of all retractions.
   Geographically, **China** contributed **49.33%** of total retractions, highlighting a strong regional pattern.
+  
+  <img src="https://github.com/user-attachments/assets/fb85bc61-5303-4a76-9e35-1967d96e5e88" alt="image" style="width:60%; height:auto;" />
 
 * **Common Retraction Causes:**
   The most frequent issues were linked to **publication and peer review processes (40%)**, followed by **data integrity problems (36%)** and **authorship disputes (11%)**.
@@ -58,6 +64,8 @@ The second objective focused on developing a **machine learning model** to predi
 
 * **Feature Importance:**
   Random Forest analysis identified the **number of retractions by publisher**, **number of retractions by journal**, and **total retractions by authors** as the **most influential predictors** of future retractions.
+  
+  <img src="https://github.com/user-attachments/assets/ed174fbc-56c0-4dcf-80c1-15bfb2f83eff" alt="image" style="width:60%; height:auto;" />
 
 * **Validation:**
   The KNN model was re-evaluated using these selected features, confirming their predictive strength with consistently high performance metrics.
