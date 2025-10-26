@@ -7,10 +7,62 @@ In 2023, more than 10,000 research papers were retracted, the highest number eve
   * Predict important aspects of future retractions.
 
 # Dataset
+Dataset **“retractions35215.csv”** originates from the **Retraction Watch** organisation.
+The dataset includes **35,215 rows** and **21 columns** and was **last updated on 15 January 2024**.
 
+An additional dataset from the **Retraction Watch database** was used for model validation.
 
-# Methodology 
+More information can be found at: [https://retractionwatch.com/retraction-watch-database-user-guide/retractionwatch-database-user-guide-appendix-a-fields/](https://retractionwatch.com/retraction-watch-database-user-guide/retractionwatch-database-user-guide-appendix-a-fields/)
+
+# Methodology
+The project used a structured methodology combining exploratory data analysis and predictive modelling. In the first phase, historical data on research paper retractions from the Retraction Watch database was analysed to uncover key patterns. Statistical and visual analysis techniques were applied to explore retraction trends by year, subject area, journal, publisher, institution, country, and article type. Common reasons for retractions, retraction duration, citation impact, and authorship patterns were examined to understand systemic issues in research integrity and publication processes.
+
+In the second phase, a balanced dataset of retracted and non-retracted papers was created by merging Retraction Watch and Scopus data. Data cleaning, standardisation, and feature engineering were performed, including normalising author names, calculating retraction counts by publisher and journal, and adding metrics such as SJR scores and citation counts. Multiple machine-learning models—such as Naïve Bayes, Random Forest, and K-Nearest Neighbours—were trained and evaluated using pipelines that ensured consistent preprocessing. Model performance was compared using accuracy and classification metrics to identify the most effective predictive model for detecting potential future retractions.
+
 # Key findings
+## **Objective 1 – Trend Analysis of Research Paper Retractions**
+
+The first objective aimed to identify major historical patterns and underlying causes of research paper retractions using the **Retraction Watch** dataset.
+
+* **Sharp Increase Over Time:**
+  The number of retractions has risen dramatically, reaching a peak of **6,034 in 2023**, compared to only one in 1940. This reflects both the rapid growth of scientific publications and increased scrutiny of research integrity.
+
+* **Dominant Subject Areas:**
+  **Biological and Health Sciences** recorded the highest retraction rates, followed by **Business, Technology, and Physical Sciences**. These fields face higher ethical and methodological pressures due to their societal and clinical relevance.
+
+* **Journal, Publisher, and Regional Concentration:**
+  Retracted papers are concentrated within a small number of publishers—**the top 10 accounted for 74.42%** of all retractions.
+  Geographically, **China** contributed **49.33%** of total retractions, highlighting a strong regional pattern.
+
+* **Common Retraction Causes:**
+  The most frequent issues were linked to **publication and peer review processes (40%)**, followed by **data integrity problems (36%)** and **authorship disputes (11%)**.
+
+* **Additional Insights:**
+
+  * Most retractions occurred **within one year of publication**.
+  * **Single-author papers** were more likely to be retracted than multi-author works.
+  * **Non-paywalled articles** experienced more retractions, likely due to higher public visibility.
+  * Although many retracted papers had low citation counts, a few highly cited papers were also retracted, indicating that **influence does not equal integrity**.
+
+---
+
+## **Objective 2 – Predictive Modelling of Retractions**
+
+The second objective focused on developing a **machine learning model** to predict potential future retractions based on the patterns identified in Objective 1.
+
+* **Dataset Creation:**
+  A combined dataset of **11,389 papers** was compiled—**5,044 retracted** (from Retraction Watch) and **6,345 non-retracted** (from Scopus). Data cleaning included normalising author names, removing anomalies, and adding variables such as **publisher/journal retraction history**, **SJR scores**, and **author retraction counts**.
+
+* **Model Performance:**
+  Multiple models were compared using a unified pipeline. The **K-Nearest Neighbours (KNN)** classifier achieved the **highest accuracy of 94.81%**, followed closely by **Random Forest at 94.35%**.
+
+* **Feature Importance:**
+  Random Forest analysis identified the **number of retractions by publisher**, **number of retractions by journal**, and **total retractions by authors** as the **most influential predictors** of future retractions.
+
+* **Validation:**
+  The KNN model was re-evaluated using these selected features, confirming their predictive strength with consistently high performance metrics.
+
+These findings demonstrate that **author and publisher reputation** play a decisive role in determining retraction risk, and that predictive analytics can effectively flag at-risk publications, supporting improved research integrity.
 
 # References
 1.	Callaway, E. (2022). Retractions are increasing, but not enough. Nature. https://www.nature.com/articles/d41586-022-02071-6
